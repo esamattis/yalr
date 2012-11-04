@@ -1,0 +1,23 @@
+{
+  "version": "0.1.0",
+  "name": "yalr",
+  "description": "Yet Another LiveReload Server",
+  "tags": [ "util", "utility", "livereload" ],
+  "author": "Esa-Matti Suuronen <esa-matti@suuronen.org>",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/epeli/yalr.git"
+  },
+  "main": "./index.js",
+  "bin": {
+    "yalr": "./bin/yarl"
+  },
+  "dependencies": {
+    "optimist": "",
+    "underscore": "",
+    "watchr": "",
+    "ws": "",
+    "filed": "",
+    "minimatch": ""
+  }
+}
