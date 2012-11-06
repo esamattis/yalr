@@ -1,3 +1,3 @@
 
-# YALR - Yet Another LiveReload Server
+# YALR - Yet Another Live Reload
 
