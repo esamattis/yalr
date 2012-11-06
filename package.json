@@ -2,7 +2,11 @@
   "version": "0.1.0",
   "name": "yalr",
   "description": "Yet Another LiveReload Server",
-  "tags": [ "util", "utility", "livereload" ],
+  "tags": [
+    "util",
+    "utility",
+    "livereload"
+  ],
   "author": "Esa-Matti Suuronen <esa-matti@suuronen.org>",
   "repository": {
     "type": "git",
