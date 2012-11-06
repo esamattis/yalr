@@ -4,7 +4,9 @@ var log = require("./lib/log");
 
 module.exports = function(opts, _extend){
 
-  var yarlFilePath = process.cwd() + "/YALRFile";
+  _extend = _extend || {};
+
+  var yarlFilePath = _extend.config || process.cwd() + "/YALRFile";
 
   if (!opts) {
     try {
