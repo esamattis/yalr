@@ -2,21 +2,21 @@
 var _ = require("underscore");
 var log = require("./lib/log");
 
-module.exports = function(opts, _extend){
+module.exports = function(userOpts){
+  var opts = {};
+  userOpts = userOpts || {};
 
-  _extend = _extend || {};
+  var yarlFilePath = userOpts.configFile || process.cwd() + "/YALRFile";
 
-  var yarlFilePath = _extend.config || process.cwd() + "/YALRFile";
-
-  if (!opts) {
-    try {
-      opts = require(yarlFilePath);
-    } catch(err) {
-      opts = {};
-    }
+  try {
+    fileOpts = require(yarlFilePath);
+  } catch(err) {
+    fileOpts = {};
   }
 
-  _.extend(opts, _extend);
+  // First take options from YARLfile and then from userInput. That's neighter
+  // command line switches or an object given using the yalr node.js API.
+  _.extend(opts, fileOpts, userOpts);
 
   log.verbose = opts.verbose;
   log.quiet = opts.quiet;
@@ -28,6 +28,7 @@ module.exports = function(opts, _extend){
     liveUpdate(path);
   });
 
+  return opts;
 };
 
 

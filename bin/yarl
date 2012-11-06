@@ -1,2 +1,2 @@
 #!/usr/bin/env node
-require("../index")(null, require('optimist').argv);
+require("../index")(require('optimist').argv);
