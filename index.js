@@ -9,7 +9,6 @@ module.exports = function(opts, _extend){
   if (!opts) {
     try {
       opts = require(yarlFilePath);
-      log("Using " + yarlFilePath);
     } catch(err) {
       opts = {};
     }
@@ -17,7 +16,8 @@ module.exports = function(opts, _extend){
 
   _.extend(opts, _extend);
 
-  log.active = opts.debug;
+  log.verbose = opts.verbose;
+  log.quiet = opts.quiet;
 
   var liveUpdate = require("./lib/server")(opts);
 
