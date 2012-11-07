@@ -12,26 +12,27 @@ Possible options
 
 ### liveCSS
 
+Live update CSS without page refreshes.
 
 ### port
 
-Port listen to
+Port listen to.
 
 ### path
 
-Path or array or path to watch
+Path or array or paths to watch.
 
 ### debounce
 
-Debouncing
+Debonce time in milliseconds before actually sending the reload.
 
 ### sleepAfter
 
-Sleeping after reload
+Sleep milliseconds after a reload.
 
 ### match
 
-Which files to reload. glob or regexp
+Which files to reload. Glob or regexp.
 
 ### ignore
 
@@ -43,7 +44,7 @@ More debugging stuff
 
 ### quiet
 
-Be totally silent. asdfks dasdlkaj fsdakldsaj dsflsdfakj sdfalksdfaj sdaflkjfds alfdsaj sdfaksdfa sdflk dsfa.asdf kasdj sfadlksdf
+Be totally silent.
 
 ## License
 
