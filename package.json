@@ -17,11 +17,11 @@
     "yalr": "./bin/yarl"
   },
   "dependencies": {
-    "optimist": "",
-    "underscore": "",
-    "watchr": "",
-    "ws": "",
-    "filed": "",
-    "minimatch": ""
+    "optimist": "0.3.5",
+    "underscore": "1.4.2",
+    "watchr": "2.1.5",
+    "ws": "0.4.22",
+    "filed": "0.0.7",
+    "minimatch": "0.2.9"
   }
 }
