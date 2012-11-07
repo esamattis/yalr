@@ -22,6 +22,7 @@
     "watchr": "2.1.5",
     "ws": "0.4.22",
     "filed": "0.0.7",
-    "minimatch": "0.2.9"
+    "minimatch": "0.2.9",
+    "marked": "0.2.5"
   }
 }
