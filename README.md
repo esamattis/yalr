@@ -1,6 +1,12 @@
 
 # YALR - Yet Another Live Reload
 
+...because other node.js based [LiveReload][] compatible servers just didn't
+work.
+
+Watches file modifications and reloads web pages automatically for you.
+
+
 ## Installation
 
     [sudo] npm install -g yalr
@@ -153,3 +159,4 @@ The MIT License
 
 [protocol]: http://feedback.livereload.com/knowledgebase/articles/86174-livereload-protocol
 [extension]: https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei
+[LiveReload]: http://livereload.com/
