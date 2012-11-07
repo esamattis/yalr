@@ -14,16 +14,15 @@ Web Socket server on a port 35729 and will start recursively watching all the
 files in the current working directory and its subdirectories.
 
 It will will print out the script tag needed to connect your browser to YALR
-server or you can use the [LiveReload Chrome extension][extension].
-
-Then the browser page will be automatically reloaded every time a change is
+server or you can use the [LiveReload Chrome extension][extension].  Then the
+browser page will be automatically reloaded every time when a change is
 detected in the watch path.
 
 The watch path and various other options can be passed to the `yalr` command via
 command line switches (use `--help` to list them) or via an `YALRFile` in the
 current working directory.
 
-The YALRFile is node.js module exposing a single object:
+The YALRFile is a node.js module exposing a single object:
 
 ```javascript
 module.exports = {
@@ -89,7 +88,6 @@ Match only certain files.
 
 Glob string or Javascript Regexp object. Glob will be matched only against the
 the basename, but the regexp will be matched agaisnt the absolute file path.
-
 Regexp format is not avaible from the command line.
 
 Default: (matches every file)
@@ -124,11 +122,19 @@ Default: 0
 
 ### verbose
 
-More debugging stuff.
+Print more debugging stuff.
 
 ### quiet
 
 Be totally silent.
+
+### configFile
+
+Custom path for the YARLFile.
+
+Not avaible in the YALRfile :)
+
+Default: (the current working directory)/YALRFile
 
 ### disableLiveCSS
 
