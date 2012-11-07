@@ -1,6 +1,6 @@
 # YALR - Yet Another Live Reload
 
-...because other node.js based [LiveReload][] compatible servers just didn't
+...because the other node.js based [LiveReload][] compatible servers just didn't
 work.
 
 Watches file modifications and reloads web pages automatically for you.
