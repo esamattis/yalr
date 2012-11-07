@@ -1,6 +1,12 @@
 
 # YALR - Yet Another Live Reload
 
+...because other node.js based [LiveReload][] compatible servers just didn't
+work.
+
+Watches file modifications and reloads web pages automatically for you.
+
+
 ## Installation
 
     [sudo] npm install -g yalr
@@ -11,11 +17,13 @@
 
 The `yalr` command will start a [LiveReload Protocol v7][protocol] compatible
 Web Socket server on a port 35729 and will start recursively watching all the
-files in the current working directory and its subdirectories.
+files for modifications in the current working directory and its
+subdirectories. File/directory deletions and additions are considered as
+modifications too.
 
-It will will print out the script tag needed to connect your browser to YALR
-server or you can use the [LiveReload Chrome extension][extension].  Then the
-browser page will be automatically reloaded every time when a change is
+It will will print out the script tag required by the browser to connect to the
+YALR server or you can use the [LiveReload Chrome extension][extension]. Then
+the browser page will be automatically reloaded every time when a change is
 detected in the watch path.
 
 The watch path and various other options can be passed to the `yalr` command via
@@ -62,9 +70,14 @@ require("yalr")({
 });
 ```
 
-It will also read the YALRFile. Options in the YALRFile take precedence over
-the options given using the API. Which makes it perfect for developer specific
-config. Just put it to .gitignore.
+It will also read the YALRFile. Options in the YALRFile will take precedence
+over the options given using the API. Which makes it perfect for developer
+specific config. Just put it to .gitignore.
+
+The yarl module function returns an object with the current options and a `tag`
+attribute which contains a string of the script tag. This can be used to make
+more tight integrations to various node.js web frameworks. The example
+directory contains an example using the Express framework.
 
 ## Options
 
@@ -146,3 +159,4 @@ The MIT License
 
 [protocol]: http://feedback.livereload.com/knowledgebase/articles/86174-livereload-protocol
 [extension]: https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei
+[LiveReload]: http://livereload.com/
