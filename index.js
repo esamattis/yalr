@@ -8,7 +8,7 @@ module.exports = function(nodejsOpts, cliOpts){
   cliOpts = cliOpts || {};
   var opts = {
     // for server
-    liveCSS: true,
+    disableLiveCSS: false,
     port: 35729,
 
     // watcher

@@ -1,51 +1,142 @@
 
 # YALR - Yet Another Live Reload
 
+## Installation
+
+    [sudo] npm install -g yalr
 
 ## Usage
 
     yarl [options]
 
+The `yalr` command will start a [LiveReload Protocol v7][protocol] compatible
+Web Socket server on a port 35729 and will start recursively watching all the
+files in the current working directory and its subdirectories.
+
+It will will print out the script tag needed to connect your browser to YALR
+server or you can use the [LiveReload Chrome extension][extension].
+
+Then the browser page will be automatically reloaded every time a change is
+detected in the watch path.
+
+The watch path and various other options can be passed to the `yalr` command via
+command line switches (use `--help` to list them) or via an `YALRFile` in the
+current working directory.
+
+The YALRFile is node.js module exposing a single object:
+
+```javascript
+module.exports = {
+
+  // Watch files only in the public directory
+  path: "public",
+
+  // Reload page only when css or js file changes
+  match: [
+    "*.css",
+    "*.js"
+  ]
+
+};
+```
+
+You can use both methods simultaneously. Command line switches will override
+the options defined in the YALRFile.
+
+## node.js API
+
+YALR can be really easily be embedded in node.js applications.
+
+Simplest use case:
+
+```javascript
+require("yalr")();
+```
+
+This is effectly same as executing the `yalr` command without options.
+
+It can have options too:
+
+```javascript
+require("yalr")({
+  path: "public"
+});
+```
+
+It will also read the YALRFile. Options in the YALRFile take precedence over
+the options given using the API. Which makes it perfect for developer specific
+config. Just put it to .gitignore.
+
 ## Options
 
-Possible options
-
-### liveCSS
-
-Live update CSS without page refreshes.
+Possible options for the YARLFile, node.js API and the command line.
 
 ### port
 
 Port listen to.
 
+Default: 35729
+
 ### path
 
 Path or array or paths to watch.
 
+Default: The current working directory
+
+### match
+
+Match only certain files.
+
+Glob string or Javascript Regexp object. Glob will be matched only against the
+the basename, but the regexp will be matched agaisnt the absolute file path.
+
+Regexp format is not avaible from the command line.
+
+Default: (matches every file)
+
+### ignore
+
+Which file to ignore.
+
+Like match, but for ignoring files.
+
+Default: (nothing)
+
 ### debounce
 
-Debonce time in milliseconds before actually sending the reload.
+Debounce time in milliseconds before actually sending the reload.
+
+In some cases, such as static site generators, you might have multiple
+change events coming in for long periods of time. This option makes YALR to
+wait until the events stop arriving before sending the reload request.
+
+Default: 0
 
 ### sleepAfter
 
 Sleep milliseconds after a reload.
 
-### match
+In some cases a reload can cause other files to be generated which can lead in
+the worst case to an infinite reload loop. Setting this to `1000` will prevent
+that effectively.
 
-Which files to reload. Glob or regexp.
-
-### ignore
-
-Which file to ignore.  Glob or regexp.
+Default: 0
 
 ### verbose
 
-More debugging stuff
+More debugging stuff.
 
 ### quiet
 
 Be totally silent.
 
+### disableLiveCSS
+
+Disable smart live CSS reloads.
+
 ## License
 
 The MIT License
+
+[protocol]: http://feedback.livereload.com/knowledgebase/articles/86174-livereload-protocol
+[extension]: https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei
