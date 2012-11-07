@@ -64,9 +64,9 @@ require("yalr")({
 });
 ```
 
-It will also read the YALRFile. Options in the YALRFile take precedence over
-the options given using the API. Which makes it perfect for developer specific
-config. Just put it to .gitignore.
+It will also read the YALRFile. Options in the YALRFile will take precedence
+over the options given using the API. Which makes it perfect for developer
+specific config. Just put it to .gitignore.
 
 The yarl module function returns an object with the current options and a `tag`
 attribute which contains a string of the script tag. This can be used to make
