@@ -1,0 +1,14 @@
+{
+  "version": "0.0.0",
+  "name": "yalr-express-example",
+  "description": "YALR integration with Express",
+  "author": "Esa-Matti Suuronen <esa-matti@suuronen.org>",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "3.x.x",
+    "underscore": "",
+    "consolidate": ""
+  }
+}

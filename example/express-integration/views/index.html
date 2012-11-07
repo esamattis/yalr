@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <title>YALR in Express</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+  </head>
+  <body>
+   <h1>Hello YALR!</h1>
+   <p>
+      Try editing public/style.css or views/index.html :)
+   </p>
+  </body>
+
+  <% if (yalrConfig) { %>
+  <%= yalrConfig.tag %>
+  <% } %>
+</html>
