@@ -46,6 +46,8 @@ module.exports = function(nodejsOpts, cliOpts){
     liveUpdate(path);
   });
 
+  log.d("Started with", _.omit(opts, "server", "tag", "_"));
+
   return opts;
 };
 
