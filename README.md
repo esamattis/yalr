@@ -15,9 +15,9 @@ files for modifications in the current working directory and its
 subdirectories. File/directory deletions and additions are considered as
 modifications too.
 
-It will will print out the script tag needed to connect your browser to YALR
-server or you can use the [LiveReload Chrome extension][extension]. Then the
-browser page will be automatically reloaded every time when a change is
+It will will print out the script tag needed to connect your browser to the
+YALR server or you can use the [LiveReload Chrome extension][extension]. Then
+the browser page will be automatically reloaded every time when a change is
 detected in the watch path.
 
 The watch path and various other options can be passed to the `yalr` command via
