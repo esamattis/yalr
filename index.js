@@ -13,7 +13,7 @@ module.exports = function(nodejsOpts, cliOpts){
 
     // watcher
     path: process.cwd(),
-    debounce: 30,
+    debounce: 0,
     sleepAfter: 1000,
     match: /.*/,
     ignore: []
