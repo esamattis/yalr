@@ -1,4 +1,3 @@
-
 # YALR - Yet Another Live Reload
 
 ...because other node.js based [LiveReload][] compatible servers just didn't
@@ -99,9 +98,9 @@ Default: The current working directory
 
 Match only certain files.
 
-Glob string or Javascript Regexp object. Glob will be matched only against the
-the basename, but the regexp will be matched agaisnt the absolute file path.
-Regexp format is not avaible from the command line.
+Glob string or JavaScript RegExp object or an array of glob strings and RegExp objects.
+Glob will be matched only against the the basename, but the regexp will be matched 
+agaisnt the absolute file path. Regexp format is not avaible from the command line.
 
 Default: (matches every file)
 
