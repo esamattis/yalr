@@ -29,6 +29,8 @@ The watch path and various other options can be passed to the `yalr` command via
 command line switches (use `--help` to list them) or via an `YALRFile` in the
 current working directory.
 
+## YALRFile
+
 The YALRFile is a node.js module exposing a single object:
 
 ```javascript
