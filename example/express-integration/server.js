@@ -14,23 +14,27 @@ app.configure(function(){
 });
 
 
-var yalrConfig = null;
 app.configure("development", function(){
 
-  // Normally require "yarl"
-  yalrConfig = require("../../index")({
+  // Normally require("yarl")({ ...
+  var yalrConfig = require("../../index")({
     port: 1234,
     path: [
       "public",
       "views"
     ]
   });
+
+  app.use(function(req, res, next){
+    res.locals.yalrConfig = yalrConfig;
+    next();
+  });
+
 });
 
 
 app.get("/", function(req, res){
   res.render("index", {
-    yalrConfig: yalrConfig,
     layout: false
   });
 });
