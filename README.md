@@ -26,10 +26,12 @@ the browser page will be automatically reloaded every time when a change is
 detected in the watch path.
 
 The watch path and various other options can be passed to the `yalr` command via
-command line switches (use `--help` to list them) or via an `YALRFile` in the
-current working directory.
+command line switches (use `--help` to list them).
 
 ## YALRFile
+
+Another method to configure YALR is via an `YALRFile` which is read from the current
+working directory or from a path specified with `--configFile`.
 
 The YALRFile is a node.js module exposing a single object:
 
@@ -78,7 +80,7 @@ specific config. Just put it to .gitignore.
 The yarl module function returns an object with the current options and a `tag`
 attribute which contains a string of the script tag. This can be used to make
 more tight integrations to various node.js web frameworks. The example
-directory contains an example using the Express framework.
+directory contains an [example][express-example] using the Express framework.
 
 ## Options
 
@@ -167,3 +169,4 @@ The MIT License
 [protocol]: http://feedback.livereload.com/knowledgebase/articles/86174-livereload-protocol
 [extension]: https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei
 [LiveReload]: http://livereload.com/
+[express-example]: https://github.com/epeli/yalr/tree/master/example/express-integration
