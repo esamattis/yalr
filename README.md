@@ -154,7 +154,7 @@ Default: (the current working directory)/YALRFile
 
 Start YALR as disabled.
 
-Useful for temporally disabling the embedded yalr server from YALRFile.
+Useful for temporally disabling the embedded YALR server from the YALRFile.
 
 ### disableLiveCSS
 
