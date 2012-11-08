@@ -39,6 +39,13 @@ module.exports = function(nodejsOpts, cliOpts){
   log.verbose = opts.verbose;
   log.quiet = opts.quiet;
 
+  log.d("Configured with", _.omit(opts, "server", "tag", "_"));
+
+  if (opts.disable) {
+    log("Disabled by the 'disable' option!");
+    return;
+  }
+
   var liveUpdate = require("./lib/server")(opts);
 
   require("./lib/watcher")(opts, function(err, path) {
@@ -46,7 +53,6 @@ module.exports = function(nodejsOpts, cliOpts){
     liveUpdate(path);
   });
 
-  log.d("Started with", _.omit(opts, "server", "tag", "_"));
 
   return opts;
 };

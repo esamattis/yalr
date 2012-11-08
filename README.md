@@ -106,7 +106,7 @@ Default: (matches every file)
 
 ### ignore
 
-Which file to ignore.
+Which files to ignore.
 
 Like match, but for ignoring files.
 
@@ -147,6 +147,12 @@ Custom path for the YARLFile.
 Not avaible in the YALRfile :)
 
 Default: (the current working directory)/YALRFile
+
+### disable
+
+Start YALR as disabled.
+
+Useful for temporally disabling the embedded yalr server from YALRFile.
 
 ### disableLiveCSS
 
