@@ -11,7 +11,7 @@
    </p>
   </body>
 
-  <% if (yalrConfig) { %>
+  <% if (typeof yalrConfig === "object") { %>
   <%= yalrConfig.tag %>
   <% } %>
 </html>
