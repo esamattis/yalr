@@ -182,6 +182,13 @@ Disable smart live CSS reloads.
 
 *Default: false*
 
+## Thanks
+
+Thanks to orignal [LiveReload][] project! If you're on OS X consider purchasing it. It will
+also help this project too since this uses the MIT licenced [livereload.js][] component
+of LiveReload 2.
+
+
 ## License
 
 The MIT License
@@ -190,3 +197,4 @@ The MIT License
 [extension]: https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei
 [LiveReload]: http://livereload.com/
 [express-example]: https://github.com/epeli/yalr/tree/master/example/express-integration
+[livereload.js]: https://github.com/livereload/livereload-js
