@@ -15,14 +15,21 @@ Watches file modifications and reloads web pages automatically for you.
     yarl [options]
 
 The `yalr` command will start a [LiveReload Protocol v7][protocol] compatible
-Web Socket server on a port 35729 and will start recursively watching all the
+Web Socket server listening on a port 35729 while watching all the
 files for modifications in the current working directory and its
 subdirectories. File/directory deletions and additions are considered as
-modifications too.
+modifications too. Just add this script tag to your app:
 
-It will will print out the script tag required by the browser to connect to the
-YALR server or you can use the [LiveReload Chrome extension][extension]. Then
-the browser page will be automatically reloaded every time when a change is
+```html
+<script>document.write('<script src="http://'
++ (location.host || 'localhost').split(':')[0]
++ ':35729/livereload.js"></'
++ 'script>')</script>
+```
+
+or use the [LiveReload Chrome extension][extension] and you're good to go!
+
+Now your web pages will be automatically reloaded every time when a change is
 detected in the watch path.
 
 The watch path and various other options can be passed to the `yalr` command via
@@ -41,8 +48,9 @@ module.exports = {
   // Watch files only in the public directory
   path: "public",
 
-  // Reload page only when css or js file changes
+  // Reload page only when html, css or js file changes
   match: [
+    "*.html",
     "*.css",
     "*.js"
   ]
@@ -84,13 +92,13 @@ directory contains an [example][express-example] using the Express framework.
 
 ## Options
 
-Possible options for the YARLFile, node.js API and the command line.
+Options for the YARLFile, node.js API and the command line.
 
 ### port
 
-Port listen to.
+Port to listen to.
 
-Default: 35729
+*Default: 35729*
 
 ### path
 
@@ -99,28 +107,26 @@ Path to watch.
 From the command line this can be defined multiple times and and from the YARLFile
 it can be also an array.
 
-Default: The current working directory
+*Default: The current working directory*
 
 ### match
 
 Match only certain files.
 
-Glob string or JavaScript RegExp object. Glob will be matched only against the
-the basename, but the regexp will be matched agaisnt the absolute file path.
+Glob string or JavaScript RegExp object. The glob string will be matched against the
+the basename and the RegExp object will be matched against the full file path.
 Regexp format is not avaible from the command line.
 
 From the command line this can be defined multiple times and and from the YARLFile
 it can be also an array.
 
-Default: (anything)
+*Default: (anything)*
 
 ### ignore
 
-Which files to ignore.
-
 Like match, but for ignoring files.
 
-Default: (nothing)
+*Default: (nothing)*
 
 ### debounce
 
@@ -140,15 +146,19 @@ In some cases a reload can cause other files to be generated which can lead in
 the worst case to an infinite reload loop. Setting this to `1000` will prevent
 that effectively.
 
-Default: 0
+*Default: 0*
 
 ### verbose
 
 Print more debugging stuff.
 
+*Default: false*
+
 ### quiet
 
 Be totally silent.
+
+*Default: false*
 
 ### configFile
 
@@ -156,7 +166,7 @@ Custom path for the YARLFile.
 
 Not avaible in the YALRfile :)
 
-Default: (the current working directory)/YALRFile
+*Default: (the current working directory)/YALRFile*
 
 ### disable
 
@@ -164,9 +174,13 @@ Start YALR as disabled.
 
 Useful for temporally disabling the embedded YALR server from the YALRFile.
 
+*Default: false*
+
 ### disableLiveCSS
 
 Disable smart live CSS reloads.
+
+*Default: false*
 
 ## License
 
