@@ -27,7 +27,7 @@ modifications too. Just add this script tag to your app:
 + 'script>')</script>
 ```
 
-or use the [LiveReload Chrome extension][extension] and you're good to go!
+or use the LiveReload Chrome, Firefox or Safari [extension][extension] and you're good to go!
 
 Now your web pages will be automatically reloaded every time when a change is
 detected in the watch path.
@@ -194,7 +194,7 @@ of LiveReload 2.
 The MIT License
 
 [protocol]: http://feedback.livereload.com/knowledgebase/articles/86174-livereload-protocol
-[extension]: https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei
+[extension]: http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-
 [LiveReload]: http://livereload.com/
 [express-example]: https://github.com/epeli/yalr/tree/master/example/express-integration
 [livereload.js]: https://github.com/livereload/livereload-js
