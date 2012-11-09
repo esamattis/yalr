@@ -107,7 +107,7 @@ Path to watch.
 From the command line this can be defined multiple times and and from the YARLFile
 it can be also an array.
 
-*Default: The current working directory*
+*Default: (The current working directory)*
 
 ### match
 
@@ -166,7 +166,7 @@ Custom path for the YARLFile.
 
 Not avaible in the YALRfile :)
 
-*Default: (the current working directory)/YALRFile*
+*Default: (The current working directory)*
 
 ### disable
 
