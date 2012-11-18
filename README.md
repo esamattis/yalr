@@ -12,7 +12,7 @@ Watches file modifications and reloads web pages automatically for you.
 
 ## Usage
 
-    yarl [options]
+    yalr [options]
 
 The `yalr` command will start a [LiveReload Protocol v7][protocol] compatible
 Web Socket server listening on a port 35729 while watching all the
@@ -85,14 +85,14 @@ It will also read the YALRFile. Options in the YALRFile will take precedence
 over the options given using the API. Which makes it perfect for developer
 specific config. Just put it to .gitignore.
 
-The yarl module function returns an object with the current options and a `tag`
+The yalr module function returns an object with the current options and a `tag`
 attribute which contains a string of the script tag. This can be used to make
 more tight integrations to various node.js web frameworks. The example
 directory contains an [example][express-example] using the Express framework.
 
 ## Options
 
-Options for the YARLFile, node.js API and the command line.
+Options for the YALRFile, node.js API and the command line.
 
 ### port
 
@@ -104,7 +104,7 @@ Port to listen to.
 
 Path to watch.
 
-From the command line this can be defined multiple times and and from the YARLFile
+From the command line this can be defined multiple times and and from the YALRFile
 it can be also an array.
 
 *Default: (The current working directory)*
@@ -117,7 +117,7 @@ Glob string or JavaScript RegExp object. The glob string will be matched against
 the basename and the RegExp object will be matched against the full file path.
 Regexp format is not avaible from the command line.
 
-From the command line this can be defined multiple times and and from the YARLFile
+From the command line this can be defined multiple times and and from the YALRFile
 it can be also an array.
 
 *Default: (anything)*
@@ -162,7 +162,7 @@ Be totally silent.
 
 ### configFile
 
-Custom path for the YARLFile.
+Custom path for the YALRFile.
 
 Not avaible in the YALRfile :)
 
