@@ -19,7 +19,7 @@
   "dependencies": {
     "optimist": "0.3.5",
     "underscore": "1.4.2",
-    "watchr": "2.1.5",
+    "watchr": "2.2.1",
     "ws": "0.4.22",
     "filed": "0.0.7",
     "minimatch": "0.2.9",
