@@ -1,6 +1,7 @@
 
 var _ = require("underscore");
 var log = require("./lib/log");
+var exec = require("child_process").exec;
 
 module.exports = function(nodejsOpts, cliOpts){
 
@@ -16,7 +17,8 @@ module.exports = function(nodejsOpts, cliOpts){
     debounce: 0,
     sleepAfter: 1000,
     match: /.*/,
-    ignore: []
+    ignore: [],
+    beforeUpdate: function(cb) { cb(); }
   };
 
   var yarlFilePath = cliOpts.configFile || process.cwd() + "/YALRFile";
@@ -46,11 +48,27 @@ module.exports = function(nodejsOpts, cliOpts){
     return;
   }
 
+  if (typeof opts.beforeUpdate === "string") {
+    var cliCmd = opts.beforeUpdate;
+    opts.beforeUpdate = function(cb) {
+      exec(cliCmd, function(err, stdout, stderr) {
+        process.stderr.write(stderr);
+        process.stdout.write(stdout);
+        cb(err);
+      });
+    };
+  }
+
   var liveUpdate = require("./lib/server")(opts);
 
   require("./lib/watcher")(opts, function(err, path) {
     if (err) throw err;
-    liveUpdate(path);
+    opts.beforeUpdate(function(err) {
+      if (err) {
+        console.error("Before hook failed!", err);
+      }
+      liveUpdate(path);
+    });
   });
 
 

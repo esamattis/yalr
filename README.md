@@ -182,6 +182,12 @@ Disable smart live CSS reloads.
 
 *Default: false*
 
+### beforeUpdate
+
+Execute CLI command or Javascript function with callback before update.
+
+Very useful for running SASS or CoffeeScript compilers.
+
 ## Thanks
 
 Thanks to orignal [LiveReload][] project! If you're on OS X consider purchasing it since
