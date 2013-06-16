@@ -21,7 +21,7 @@ module.exports = function(nodejsOpts, cliOpts){
     beforeUpdate: function(cb) { cb(); }
   };
 
-  var yarlFilePath = cliOpts.configFile || process.cwd() + "/YALRFile";
+  var yarlFilePath = cliOpts.configFile || process.cwd() + "/yalr.js";
 
   var fileOpts;
   try {
@@ -34,7 +34,7 @@ module.exports = function(nodejsOpts, cliOpts){
   _.extend(
     opts, // Start with defaults
     nodejsOpts, // First apply options given from node.js api
-    fileOpts, // Second apply options from YALRFile
+    fileOpts, // Second apply options from yalr.js
     cliOpts // Last apply options from command line switches
   );
 

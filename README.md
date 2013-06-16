@@ -35,12 +35,12 @@ detected in the watch path.
 The watch path and various other options can be passed to the `yalr` command via
 command line switches (use `--help` to list them).
 
-## YALRFile
+## yalr.js
 
-Another method to configure YALR is via an `YALRFile` which is read from the current
-working directory or from a path specified with `--configFile`.
+Another method to configure YALR is via an `yalr.js` file which is read from
+the current working directory or from a path specified with `--configFile`.
 
-The YALRFile is a node.js module exposing a single object:
+The `yalr.js` is a node.js module exposing a single object:
 
 ```javascript
 module.exports = {
@@ -59,7 +59,7 @@ module.exports = {
 ```
 
 You can use both methods simultaneously. Command line switches will override
-the options defined in the YALRFile.
+the options defined in the `yalr.js`.
 
 ## node.js API
 
@@ -81,7 +81,7 @@ require("yalr")({
 });
 ```
 
-It will also read the YALRFile. Options in the YALRFile will take precedence
+It will also read the `yalr.js`. Options in the `yalr.js` will take precedence
 over the options given using the API. Which makes it perfect for developer
 specific config. Just put it to .gitignore.
 
@@ -92,7 +92,7 @@ directory contains an [example][express-example] using the Express framework.
 
 ## Options
 
-Options for the YALRFile, node.js API and the command line.
+Options for the `yalr.js`, node.js API and the command line.
 
 ### port
 
@@ -104,7 +104,7 @@ Port to listen to.
 
 Path to watch.
 
-From the command line this can be defined multiple times and and from the YALRFile
+From the command line this can be defined multiple times and and from the `yalr.js`
 it can be also an array.
 
 *Default: (The current working directory)*
@@ -117,7 +117,7 @@ Glob string or JavaScript RegExp object. The glob string will be matched against
 the basename and the RegExp object will be matched against the full file path.
 Regexp format is not avaible from the command line.
 
-From the command line this can be defined multiple times and and from the YALRFile
+From the command line this can be defined multiple times and and from the `yalr.js`
 it can be also an array.
 
 *Default: (anything)*
@@ -162,9 +162,9 @@ Be totally silent.
 
 ### configFile
 
-Custom path for the YALRFile.
+Custom path for the `yalr.js`.
 
-Not avaible in the YALRfile :)
+Not avaible in the `yalr.js` :)
 
 *Default: (The current working directory)*
 
@@ -172,7 +172,7 @@ Not avaible in the YALRfile :)
 
 Start YALR as disabled.
 
-Useful for temporally disabling the embedded YALR server from the YALRFile.
+Useful for temporally disabling the embedded YALR server from the `yalr.js`.
 
 *Default: false*
 
