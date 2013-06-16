@@ -59,7 +59,7 @@ module.exports = {
 ```
 
 You can use both methods simultaneously. Command line switches will override
-the options defined in the `yalr.js`.
+the options defined in the `yalr.js` file.
 
 ## node.js API
 
@@ -92,7 +92,7 @@ directory contains an [example][express-example] using the Express framework.
 
 ## Options
 
-Options for the `yalr.js`, node.js API and the command line.
+Options for the `yalr.js` file, node.js API and the command line.
 
 ### port
 
@@ -162,7 +162,7 @@ Be totally silent.
 
 ### configFile
 
-Custom path for the `yalr.js`.
+Custom path for the `yalr.js` file.
 
 Not avaible in the `yalr.js` :)
 
@@ -172,7 +172,7 @@ Not avaible in the `yalr.js` :)
 
 Start YALR as disabled.
 
-Useful for temporally disabling the embedded YALR server from the `yalr.js`.
+Useful for temporally disabling the embedded YALR server from the `yalr.js` file.
 
 *Default: false*
 
