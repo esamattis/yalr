@@ -61,13 +61,14 @@ module.exports = function(nodejsOpts, cliOpts){
 
   var liveUpdate = require("./lib/server")(opts);
 
-  require("./lib/watcher")(opts, function(err, path) {
+  require("./lib/watcher")(opts, function(err, filePath, updateDone) {
     if (err) throw err;
     opts.beforeUpdate(function(err) {
       if (err) {
         console.error("Before hook failed!", err);
       }
-      liveUpdate(path);
+      liveUpdate(filePath);
+      updateDone();
     });
   });
 
