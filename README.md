@@ -188,7 +188,7 @@ Very useful for running SASS or CoffeeScript compilers.
 
 ## Thanks
 
-Thanks to orignal [LiveReload][] project! If you're on OS X consider purchasing it since
+Thanks to original [LiveReload][] project! If you're on OS X consider purchasing it since
 It will also help this project too because this uses the MIT licenced [livereload.js][] 
 component of LiveReload 2.
 
