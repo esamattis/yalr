@@ -1,4 +1,3 @@
-
 var _ = require("underscore");
 var log = require("./lib/log");
 var exec = require("child_process").exec;
@@ -30,7 +29,7 @@ module.exports = function(nodejsOpts, cliOpts){
     fileOpts = {};
   }
 
-  // Option preference order. Last one takes an effectj
+  // Option preference order. Last one takes rules
   _.extend(
     opts, // Start with defaults
     nodejsOpts, // First apply options given from node.js api
