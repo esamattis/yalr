@@ -29,7 +29,7 @@ module.exports = function(nodejsOpts, cliOpts){
     fileOpts = {};
   }
 
-  // Option preference order. Last one takes rules
+  // Option preference order
   _.extend(
     opts, // Start with defaults
     nodejsOpts, // First apply options given from node.js api
