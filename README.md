@@ -1,9 +1,7 @@
 # YALR - Yet Another Live Reload
 
-...because the other node.js based [LiveReload][] compatible servers just didn't
-work.
-
-Watches file modifications and reloads web pages automatically for you.
+Free and open source headless daemon for [LiveReload][LiveReload]. Nothing more.
+Works with every build tool out there.
 
 
 ## Installation
