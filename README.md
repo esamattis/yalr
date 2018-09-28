@@ -1,5 +1,7 @@
 # YALR - Yet Another Live Reload
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/epeli/yalr.svg)](https://greenkeeper.io/)
+
 Free and open source headless daemon for [LiveReload][LiveReload]. Nothing more.
 Works with every build tool out there.
 
