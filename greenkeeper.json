@@ -1,0 +1,10 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "example/express-integration/package.json",
+        "package.json"
+      ]
+    }
+  }
+}
